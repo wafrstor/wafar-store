@@ -1,0 +1,233 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: rgba(59,130,246,0.2);
+    border: 2px solid #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background: #3b82f6;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    background: #ef4444;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+main { margin-top: 80px; padding: 2rem; }
+
+.page { display: none; }
+.page.active { display: block; }
+
+.ads-rectangle {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(59,130,246,0.3);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.product {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #10b981;
+    margin: 1rem 0;
+}
+
+.product button {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.product button:hover {
+    background: #059669;
+}
+
+.contact {
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact h2 { 
+    color: #3b82f6; 
+    font-size: 2.5rem; 
+    margin-bottom: 2rem; 
+}
+
+.contact-info { 
+    font-size: 1.3rem; 
+}
+
+.contact-info a { 
+    color: #3b82f6; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.cart-items {
+    min-height: 50vh;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cart-actions button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex: 1;
+    max-width: 200px;
+}
+
+#checkout-btn {
+    background: #10b981;
+    color: white;
+}
+
+.continue-shopping {
+    background: #6b7280;
+    color: white;
+}
+
+#checkout {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#checkout-form input, #checkout-form select {
+    padding: 1rem;
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+#checkout-form input::placeholder {
+    color: #9ca3af;
+}
+
+#checkout-form button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header { padding: 1rem; }
+    .nav { flex-wrap: wrap; }
+    main { padding: 1rem; }
+    .products { grid-template-columns: 1fr; }
+}

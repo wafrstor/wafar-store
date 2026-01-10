@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wafar Store - شحن CP COD Mobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <button class="nav-btn active" onclick="showPage('home')">الرئيسية</button>
+            <button class="nav-btn" onclick="showPage('cart')">السلة</button>
+        </nav>
+        <div class="logo">Wafar Store</div>
+        <div class="cart-icon" onclick="showPage('cart')">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="page active">
+            <!-- مربع الإعلانات -->
+            <div class="ads-rectangle">
+                <h2>عروض خاصة! شحن فوري + ضمان</h2>
+                <p>اشترِ الآن واحصل على هدايا إضافية</p>
+                <!-- هنا تضع إعلاناتك -->
+            </div>
+
+            <!-- باقات CP -->
+            <div class="products">
+                <div class="product" data-cp="80" data-price="5">
+                    <h3>80 CP</h3>
+                    <p class="price">5 ريال</p>
+                    <button onclick="addToCart(80, 5)">أضف للسلة</button>
+                </div>
+                <div class="product" data-cp="420" data-price="20">
+                    <h3>420 CP</h3>
+                    <p class="price">20 ريال</p>
+                    <button onclick="addToCart(420, 20)">أضف للسلة</button>
+                </div>
+                <div class="product" data-cp="880" data-price="40">
+                    <h3>880 CP</h3>
+                    <p class="price">40 ريال</p>
+                    <button onclick="addToCart(880, 40)">أضف للسلة</button>
+                </div>
+                <div class="product" data-cp="1980" data-price="80">
+                    <h3>1980 CP</h3>
+                    <p class="price">80 ريال</p>
+                    <button onclick="addToCart(1980, 80)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <!-- التواصل -->
+            <section class="contact">
+                <h2>تواصل معنا</h2>
+                <div class="contact-info">
+                    <p>الإيميل: <a href="mailto:Wafar.stor@gmail.com">Wafar.stor@gmail.com</a></p>
+                    <p>إنستغرام: <a href="https://instagram.com/wafarstoor">@wafarstoor</a></p>
+                    <p>تيك توك: <a href="https://tiktok.com/@wafastoor">@wafastoor</a></p>
+                </div>
+            </section>
+        </section>
+
+        <!-- صفحة السلة -->
+        <section id="cart" class="page">
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-actions">
+                <button onclick="continueShopping()">متابعة التسوق</button>
+                <button onclick="showCheckout()" id="checkout-btn" style="display:none;">إتمام الطلب</button>
+            </div>
+        </section>
+
+        <!-- صفحة الدفع -->
+        <section id="checkout" class="page">
+            <h2>إتمام الطلب</h2>
+            <form id="checkout-form">
+                <input type="text" placeholder="ايدي البلاير" id="player-id" required>
+                <input type="text" placeholder="الاسم الكامل" id="customer-name" required>
+                <input type="tel" placeholder="رقم الهاتف" id="phone" required>
+                <select id="payment-method">
+                    <option>اختر طريقة الدفع</option>
+                    <option value="bank">تحويل بنكي</option>
+                    <option value="applepay">Apple Pay</option>
+                </select>
+                <div id="bank-info" style="display:none;">
+                    <p>حساب البنك: [أضف رقم حسابك]</p>
+                    <p>IBAN: [أضف IBAN]</p>
+                </div>
+                <button type="submit">تأكيد الطلب</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
